@@ -1,0 +1,21 @@
+@use "@angular/material" as mat;
+
+$primary: mat.define-palette(mat.$indigo-palette, 900);
+$accent: mat.define-palette(mat.$green-palette, 200);
+$warn: mat.define-palette(mat.$red-palette, 200);
+$info: mat.define-palette(mat.$grey-palette, 200);
+
+$dashboard-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+      info: $info,
+    ),
+    typography: mat.define-typography-config(),
+    density: -2,
+  )
+);
+@include mat.core-theme($dashboard-theme);
+@include mat.button-theme($dashboard-theme);
