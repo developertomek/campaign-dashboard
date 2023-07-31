@@ -1,4 +1,5 @@
 @use "@angular/material" as mat;
+@include mat.core();
 
 $primary: mat.define-palette(mat.$indigo-palette, 900);
 $accent: mat.define-palette(mat.$green-palette, 200);
@@ -13,9 +14,13 @@ $dashboard-theme: mat.define-light-theme(
       warn: $warn,
       info: $info,
     ),
-    typography: mat.define-typography-config(),
+    typography:
+      mat.define-typography-config(
+        $font-family: "Montserrat",
+      ),
     density: -2,
   )
 );
 @include mat.core-theme($dashboard-theme);
 @include mat.button-theme($dashboard-theme);
+@include mat.all-component-themes($dashboard-theme);
