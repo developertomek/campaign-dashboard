@@ -1,0 +1,42 @@
+@import "../../../../../colors.scss";
+
+table {
+  border-radius: 25px;
+  border: 1px solid darken($info, 5);
+
+  ::ng-deep thead,
+  ::ng-deep tbody {
+    background: transparent;
+  }
+
+  .customer {
+    align-items: center;
+    display: flex;
+    margin: 10px 0;
+
+    img {
+      border: 1px solid darken($info, 5);
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+
+  .status {
+    border-radius: 25px;
+    font-size: 12px;
+    padding: 4px 8px;
+    text-transform: capitalize;
+
+    &.pending {
+      background-color: $warn;
+    }
+
+    &.done {
+      background-color: $accent;
+    }
+
+    &.rejected {
+      background-color: $error;
+    }
+  }
+}
