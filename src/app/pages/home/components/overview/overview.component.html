@@ -1,0 +1,15 @@
+<div class="overview">
+  <div class="head">
+    <mat-icon class="material-icons-outlined">{{ icon }}</mat-icon>
+    <p>{{ title }}</p>
+  </div>
+  <div class="content">
+    <p>{{ data?.value }}</p>
+
+    <div class="trend" [class]="data.trend">
+      <mat-icon *ngIf="data.trend === 'UP'">trending_up</mat-icon>
+      <mat-icon *ngIf="data.trend === 'DOWN'">trending_down</mat-icon>
+      {{ data?.percentage }}
+    </div>
+  </div>
+</div>
