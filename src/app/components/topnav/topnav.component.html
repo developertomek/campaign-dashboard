@@ -1,0 +1,39 @@
+<mat-toolbar>
+  <div class="toolbar-container">
+    <button
+      mat-icon-button
+      class="open-sidenav-btn"
+      aria-label="open menu icon"
+      (click)="toggleSidenav.emit($event)"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>Campaigns Overview</h1>
+    <span class="example-spacer"></span>
+    <div class="balance">
+      {{ userNavInfo?.balance ?? 0 }}
+      <button
+        class="balance-add"
+        mat-mini-fab
+        color="accent"
+        aria-label="Fab button add balance"
+      >
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+    <button
+      mat-icon-button
+      class="notification-icon"
+      aria-label="Icon-button with notification icon"
+    >
+      <span class="status"></span>
+      <mat-icon class="material-icons-outlined">notifications</mat-icon>
+    </button>
+    <img
+      class="avatar"
+      *ngIf="userNavInfo"
+      [src]="userNavInfo.avatar"
+      alt="user avatar"
+    />
+  </div>
+</mat-toolbar>
