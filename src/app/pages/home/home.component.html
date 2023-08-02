@@ -1,1 +1,21 @@
-<p>home works!</p>
+<h2>Campaigns Overview</h2>
+<div class="overview-container">
+  <app-overview [data]="userData?.reach" title="reach" icon="groups" />
+  <app-overview
+    [data]="userData?.avg_cost_per_view"
+    title="avg cost per view"
+    icon="sell"
+  />
+  <app-overview
+    [data]="userData?.impressions"
+    title="impressions"
+    icon="visibility"
+  />
+  <app-overview
+    [data]="userData?.spent"
+    title="spent"
+    icon="account_balance_wallet"
+  />
+</div>
+<h2>Recent Transactions</h2>
+<app-recenttransactions [transactions]="recentTransactions$ | async" />
