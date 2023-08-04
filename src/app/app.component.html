@@ -1,48 +1,15 @@
-<router-outlet></router-outlet>
-<mat-toolbar>
-  <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with menu icon"
-  >
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>My App</span>
-  <span class="example-spacer"></span>
-  <button
-    mat-icon-button
-    class="example-icon favorite-icon"
-    aria-label="Example icon-button with heart icon"
-  >
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with share icon"
-  >
-    <mat-icon>share</mat-icon>
-  </button>
-</mat-toolbar>
-<!-- <mat-sidenav-container class="example-container">
-  <mat-sidenav
-    #sidenav
-    mode="side"
-    [(opened)]="opened"
-    (opened)="events.push('open!')"
-    (closed)="events.push('close!')"
-  >
-    Sidenav content 
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="sidenav">
+    <app-leftnav (closeSidenav)="checkWindowAndSetOpened()" />
   </mat-sidenav>
 
-  <mat-sidenav-content>
-    <p><mat-checkbox [(ngModel)]="opened">sidenav.opened</mat-checkbox></p>
-    <p>
-      <button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button>
-    </p>
-    <p>Events:</p>
-    <div class="example-events">
-      <div *ngFor="let e of events">{{ e }}</div>
+  <mat-sidenav-content class="sidenav-content">
+    <app-topnav
+      (toggleSidenav)="sidenav.open()"
+      [userNavInfo]="userNavInfo$ | async"
+    ></app-topnav>
+    <div class="container">
+      <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
-</mat-sidenav-container> -->
+</mat-sidenav-container>

@@ -1,3 +1,14 @@
-.example-spacer {
-  flex: 1 1 auto;
+@import "./../colors.scss";
+
+.sidenav-container {
+  background-color: $info;
+  height: 100%;
+
+  .sidenav {
+    background-color: $sidenav;
+  }
+}
+
+.container {
+  padding: 35px 40px;
 }
