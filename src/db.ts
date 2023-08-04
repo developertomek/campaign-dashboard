@@ -1,3 +1,4 @@
+import { ITransaction } from './app/shared/types/transaction';
 import { IUser } from './app/shared/types/user';
 
 export const USER: IUser = {
@@ -742,5 +743,63 @@ export const CUSTOMERS = [
     total_amount_spent: '$4707.09',
     last_amount_spent: '$901.00',
     items_bought: 31,
+  },
+];
+export const TRANSACTIONS: ITransaction[] = [
+  {
+    id: 1,
+    firstName: 'Bill',
+    lastName: 'Zuker',
+    email: 'bzuker0@over-blog.com',
+    date: '5/2/2023',
+    image: 'https://robohash.org/porroearumcum.png?size=50x50&set=set1',
+    product: 'keyboard',
+    price: '$100.65',
+    status: 'pending',
+  },
+  {
+    id: 2,
+    firstName: 'Inger',
+    lastName: 'Tichelaar',
+    email: 'itichelaar1@ow.ly',
+    date: '8/9/2022',
+    image: 'https://robohash.org/excepturiutbeatae.png?size=50x50&set=set1',
+    product: 'mouse',
+    price: '$18.87',
+    status: 'done',
+  },
+  {
+    id: 3,
+    firstName: 'Eal',
+    lastName: 'Akroyd',
+    email: 'eakroyd2@deliciousdays.com',
+    date: '12/24/2022',
+    image: 'https://robohash.org/maioresexquam.png?size=50x50&set=set1',
+    product: 'monitor',
+    price: '$795.56',
+    status: 'done',
+  },
+  {
+    id: 4,
+    firstName: 'Karlene',
+    lastName: "O'Cassidy",
+    email: 'kocassidy3@storify.com',
+    date: '8/28/2022',
+    image: 'https://robohash.org/pariatursuscipitet.png?size=50x50&set=set1',
+    product: 'keyboard',
+    price: '$344.37',
+    status: 'done',
+  },
+  {
+    id: 5,
+    firstName: 'Weylin',
+    lastName: 'Mars',
+    email: 'wmars4@wired.com',
+    date: '7/23/2022',
+    image:
+      'https://robohash.org/ullammaioresconsectetur.png?size=50x50&set=set1',
+    product: 'mouse',
+    price: '$27.55',
+    status: 'done',
   },
 ];
