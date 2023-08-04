@@ -1,0 +1,56 @@
+<div class="nav">
+  <button
+    mat-icon-button
+    class="close-icon"
+    aria-label="close menu icon"
+    (click)="closeSidenav.emit($event)"
+    (click)="closeSidenav.emit($event)"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+  <ul class="nav-main">
+    <li
+      class="nav-item"
+      routerLink="/"
+      routerLinkActive="active-item"
+      [routerLinkActiveOptions]="{ exact: true }"
+      (click)="closeSidenav.emit($event)"
+    >
+      <mat-icon class="material-icons-outlined">home</mat-icon>
+      home
+    </li>
+    <li
+      class="nav-item"
+      routerLink="/customers"
+      routerLinkActive="active-item"
+      (click)="closeSidenav.emit($event)"
+    >
+      <mat-icon class="material-icons-outlined">group</mat-icon>
+      customers
+    </li>
+    <li
+      class="nav-item"
+      routerLink="/statistics"
+      routerLinkActive="active-item"
+      (click)="closeSidenav.emit($event)"
+    >
+      <mat-icon class="material-icons-outlined">leaderboard</mat-icon>
+      statistics
+    </li>
+  </ul>
+  <div class="nav-premium-ad">
+    <h4>Upgrade to Pro</h4>
+    <p>Get 1 month free and unlock all statistics</p>
+    <button mat-raised-button color="primary">Upgrade</button>
+  </div>
+  <ul class="nav-settings">
+    <li class="nav-item" routerLink="/" (click)="closeSidenav.emit($event)">
+      <mat-icon class="material-icons-outlined">settings</mat-icon>
+      settings
+    </li>
+    <li class="nav-item" routerLink="/" (click)="closeSidenav.emit($event)">
+      <mat-icon class="material-icons-outlined">logout</mat-icon>
+      logout
+    </li>
+  </ul>
+</div>
