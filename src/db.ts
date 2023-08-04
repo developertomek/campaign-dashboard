@@ -1,3 +1,4 @@
+import { ICustomer } from './app/shared/types/customer';
 import { ITransaction } from './app/shared/types/transaction';
 import { IUser } from './app/shared/types/user';
 
@@ -86,7 +87,7 @@ export const USER: IUser = {
     ],
   },
 };
-export const CUSTOMERS = [
+export const CUSTOMERS: ICustomer[] = [
   {
     id: 1,
     first_name: 'Bill',
@@ -748,8 +749,8 @@ export const CUSTOMERS = [
 export const TRANSACTIONS: ITransaction[] = [
   {
     id: 1,
-    firstName: 'Bill',
-    lastName: 'Zuker',
+    first_name: 'Bill',
+    last_name: 'Zuker',
     email: 'bzuker0@over-blog.com',
     date: '5/2/2023',
     image: 'https://robohash.org/porroearumcum.png?size=50x50&set=set1',
@@ -759,8 +760,8 @@ export const TRANSACTIONS: ITransaction[] = [
   },
   {
     id: 2,
-    firstName: 'Inger',
-    lastName: 'Tichelaar',
+    first_name: 'Inger',
+    last_name: 'Tichelaar',
     email: 'itichelaar1@ow.ly',
     date: '8/9/2022',
     image: 'https://robohash.org/excepturiutbeatae.png?size=50x50&set=set1',
@@ -770,8 +771,8 @@ export const TRANSACTIONS: ITransaction[] = [
   },
   {
     id: 3,
-    firstName: 'Eal',
-    lastName: 'Akroyd',
+    first_name: 'Eal',
+    last_name: 'Akroyd',
     email: 'eakroyd2@deliciousdays.com',
     date: '12/24/2022',
     image: 'https://robohash.org/maioresexquam.png?size=50x50&set=set1',
@@ -781,8 +782,8 @@ export const TRANSACTIONS: ITransaction[] = [
   },
   {
     id: 4,
-    firstName: 'Karlene',
-    lastName: "O'Cassidy",
+    first_name: 'Karlene',
+    last_name: "O'Cassidy",
     email: 'kocassidy3@storify.com',
     date: '8/28/2022',
     image: 'https://robohash.org/pariatursuscipitet.png?size=50x50&set=set1',
@@ -792,8 +793,8 @@ export const TRANSACTIONS: ITransaction[] = [
   },
   {
     id: 5,
-    firstName: 'Weylin',
-    lastName: 'Mars',
+    first_name: 'Weylin',
+    last_name: 'Mars',
     email: 'wmars4@wired.com',
     date: '7/23/2022',
     image:

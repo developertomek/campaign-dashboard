@@ -1,7 +1,7 @@
 export interface ITransaction {
   id: number;
-  firstName: string;
-  lastName: string;
+  first_name: string;
+  last_name: string;
   email: string;
   date: string;
   image: string;
