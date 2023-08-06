@@ -23,8 +23,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.userData$.pipe(takeUntil(this.ngUnsubscribe)).subscribe((data) => {
-      this.userData = data;
+    this.userData$.pipe(takeUntil(this.ngUnsubscribe)).subscribe({
+      next: (data) => {
+        this.userData = data;
+      },
+      error: () => {
+        throw new Error("Can't load user data");
+      },
     });
   }
 
