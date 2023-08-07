@@ -1,1 +1,35 @@
-<p>statistics works!</p>
+<h2>Statistics</h2>
+
+<div class="overview-container" *ngIf="userData">
+  <app-overview
+    [data]="userData.reach"
+    title="reach"
+    icon="groups"
+    (onClick)="handleOverviewClick($event)"
+    [selected]="overviewSelected === 'reach'"
+  />
+  <app-overview
+    [data]="userData.avg_cost_per_view"
+    title="avg cost per view"
+    icon="sell"
+    (onClick)="handleOverviewClick($event)"
+    [selected]="overviewSelected === 'avg cost per view'"
+  />
+  <app-overview
+    [data]="userData.impressions"
+    title="impressions"
+    icon="visibility"
+    (onClick)="handleOverviewClick($event)"
+    [selected]="overviewSelected === 'impressions'"
+  />
+  <app-overview
+    [data]="userData.spent"
+    title="spent"
+    icon="account balance wallet"
+    (onClick)="handleOverviewClick($event)"
+    [selected]="overviewSelected === 'spent'"
+  />
+</div>
+<div>
+  <canvas id="myChart" height="100"></canvas>
+</div>
