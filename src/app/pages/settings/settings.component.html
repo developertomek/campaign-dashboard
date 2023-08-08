@@ -1,0 +1,57 @@
+<h2>Settings</h2>
+
+<div class="settings">
+  <div class="activity-notifications">
+    <h3>Activity Notifications</h3>
+    <ul>
+      <li>
+        <mat-slide-toggle [formControl]="completedTransaction"
+          >Completed transaction</mat-slide-toggle
+        >
+      </li>
+      <li>
+        <mat-slide-toggle [formControl]="incompleteTransaction"
+          >Incomplete transaction</mat-slide-toggle
+        >
+      </li>
+      <li>
+        <mat-slide-toggle [formControl]="upcomingPayment"
+          >Upcoming payments</mat-slide-toggle
+        >
+      </li>
+      <li>
+        <mat-slide-toggle [formControl]="newsletterAndNews"
+          >Newsletter and news</mat-slide-toggle
+        >
+      </li>
+    </ul>
+  </div>
+
+  <div class="display-options">
+    <h3>
+      Display Options
+      <mat-chip color="primary" highlighted="true">PRO</mat-chip>
+    </h3>
+    <ul>
+      <li>
+        <mat-form-field appearance="outline">
+          <mat-label>Language</mat-label>
+          <mat-select [formControl]="language">
+            <mat-option value="eng">English</mat-option>
+            <mat-option value="pl">Polish</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </li>
+      <li>
+        <mat-form-field appearance="outline">
+          <mat-label>Currency</mat-label>
+          <mat-select [formControl]="currency">
+            <mat-option value="usd">USD</mat-option>
+            <mat-option value="euro">EURO</mat-option>
+            <mat-option value="pln">PLN</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -32,6 +32,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   imports: [CommonModule],
@@ -68,6 +70,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatTooltipModule,
     MatStepperModule,
     MatSidenavModule,
+    MatSlideToggleModule,
+    MatChipsModule,
   ],
 })
 export class MaterialModule {}

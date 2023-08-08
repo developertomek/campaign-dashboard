@@ -44,7 +44,12 @@
     <button mat-raised-button color="primary">Upgrade</button>
   </div>
   <ul class="nav-settings">
-    <li class="nav-item" routerLink="/" (click)="closeSidenav.emit($event)">
+    <li
+      class="nav-item"
+      routerLink="/settings"
+      routerLinkActive="active-item"
+      (click)="closeSidenav.emit($event)"
+    >
       <mat-icon class="material-icons-outlined">settings</mat-icon>
       settings
     </li>
