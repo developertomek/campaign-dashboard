@@ -1,5 +1,9 @@
 @import "./../../../../../colors.scss";
 
+:host {
+  min-width: 250px;
+  width: 20%;
+}
 .overview {
   background: $sidenav;
   border: 1px solid darken($info, 5);

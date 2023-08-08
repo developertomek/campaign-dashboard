@@ -3,6 +3,8 @@
 .sidenav-container {
   background-color: $info;
   height: 100%;
+  margin: auto;
+  max-width: 2000px;
 
   .sidenav {
     background-color: $sidenav;
