@@ -1,4 +1,5 @@
 import { ICustomer } from './app/shared/types/customer';
+import { SettingsType } from './app/shared/types/settings';
 import { ITransaction } from './app/shared/types/transaction';
 import { IUser } from './app/shared/types/user';
 
@@ -802,5 +803,51 @@ export const TRANSACTIONS: ITransaction[] = [
     product: 'mouse',
     price: '$27.55',
     status: 'done',
+  },
+];
+export const ACTIVITY_SETTINGS: SettingsType[] = [
+  {
+    id: 'completedTransaction',
+    name: 'Completed transation',
+    value: true,
+    type: 'default',
+    options: null,
+  },
+  {
+    id: 'incompleteTransaction',
+    name: 'Incomplete transaction',
+    value: false,
+    type: 'default',
+    options: null,
+  },
+  {
+    id: 'upcomingPayment',
+    name: 'Upcoming payments',
+    value: false,
+    type: 'default',
+    options: null,
+  },
+  {
+    id: 'newsletterAndNews',
+    name: 'Newsletter and news',
+    value: true,
+    type: 'default',
+    options: null,
+  },
+];
+export const DISPLAY_SETTINGS: SettingsType[] = [
+  {
+    id: 'Language',
+    name: 'Language',
+    value: 'English',
+    options: ['English', 'Polish'],
+    type: 'pro',
+  },
+  {
+    id: 'Currency',
+    name: 'Currency',
+    value: 'USD',
+    options: ['USD', 'EURO', 'PLN'],
+    type: 'pro',
   },
 ];
