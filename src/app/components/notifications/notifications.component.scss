@@ -1,0 +1,58 @@
+@import "../../../colors.scss";
+
+.notifications-container {
+  background-color: $sidenav;
+  border: 1px solid darken($info, 5);
+  border-radius: 25px;
+  box-shadow: 0px 0px 10px darken($info, 5);
+  max-width: 600px;
+  padding: 25px;
+  position: absolute;
+  right: 0;
+  top: 70px;
+  width: 100%;
+
+  .notifications-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .notifications-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+
+    .notification {
+      border-top: 1px solid $info;
+      font-size: 12px;
+      line-height: 12px;
+      padding: 5px;
+      position: relative;
+
+      &-title {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22px;
+      }
+
+      &-message,
+      &-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .new {
+        background: $primary;
+        border-radius: 50%;
+        border: 1px solid $info;
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+      }
+    }
+  }
+}

@@ -16,4 +16,6 @@ import { UserNavType } from 'src/app/shared/types/user';
 export class TopnavComponent {
   @Input() userNavInfo: UserNavType | null = null;
   @Output() toggleSidenav: EventEmitter<MouseEvent> = new EventEmitter();
+
+  openNotifications: boolean = false;
 }

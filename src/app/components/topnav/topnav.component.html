@@ -27,6 +27,7 @@
       class="notification-icon"
       aria-label="Icon-button with notification icon"
       matTooltip="notifications"
+      (click)="openNotifications = !openNotifications"
     >
       <span class="status"></span>
       <mat-icon class="material-icons-outlined">notifications</mat-icon>
@@ -37,6 +38,10 @@
       [src]="userNavInfo.avatar"
       alt="user avatar"
       [matTooltip]="userNavInfo.name"
+    />
+    <app-notifications
+      *ngIf="openNotifications"
+      (closeNotifications)="openNotifications = false"
     />
   </div>
 </mat-toolbar>

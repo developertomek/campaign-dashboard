@@ -1,0 +1,23 @@
+<div class="notifications-container">
+  <div class="notifications-header">
+    <h3>Notifications</h3>
+    <button
+      mat-icon-button
+      class="close-icon"
+      aria-label="Icon-button with close icon"
+      matTooltip="close"
+      (click)="closeNotifications.emit($event)"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <ul class="notifications-list">
+    <li *ngFor="let notification of notifications" class="notification">
+      <h4 class="notification-title">
+        <span [class]="notification.status"></span>
+        {{ notification.title }}
+      </h4>
+      <p class="notification-message">{{ notification.message }}</p>
+    </li>
+  </ul>
+</div>

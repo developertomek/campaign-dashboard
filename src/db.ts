@@ -1,4 +1,5 @@
 import { ICustomer } from './app/shared/types/customer';
+import { INotification } from './app/shared/types/notification';
 import { SettingsType } from './app/shared/types/settings';
 import { ITransaction } from './app/shared/types/transaction';
 import { IUser } from './app/shared/types/user';
@@ -849,5 +850,76 @@ export const DISPLAY_SETTINGS: SettingsType[] = [
     value: 'USD',
     options: ['USD', 'EURO', 'PLN'],
     type: 'pro',
+  },
+];
+export const NOTIFICATIONS: INotification[] = [
+  {
+    status: 'new',
+    title: 'New Sale Received',
+    message:
+      'Congratulations! You have a new sale of $150. Keep up the good work!',
+  },
+
+  {
+    status: 'new',
+    title: 'Monthly Sales Goal Update',
+    message:
+      "You've achieved 75% of your monthly sales goal. Keep pushing to reach your target!",
+  },
+
+  {
+    status: 'new',
+    title: 'Low Inventory Alert',
+    message:
+      'Attention: Product A is running low on stock. Only 10 units left. Consider restocking soon.',
+  },
+
+  {
+    status: 'old',
+    title: 'Top Sales Performer',
+    message:
+      "Kudos! You're the top salesperson this week with $2000 in sales. Great job!",
+  },
+
+  {
+    status: 'old',
+    title: 'Important Announcement',
+    message:
+      'We will be launching a special promotion next week. Stay tuned for more details!',
+  },
+
+  {
+    status: 'old',
+    title: 'Order Shipment Update',
+    message:
+      'Order #123456 has been shipped. Estimated delivery date: August 25th.',
+  },
+
+  {
+    status: 'old',
+    title: 'Weekly Sales Report Available',
+    message:
+      'The weekly sales report for the current week is now available. Check it out in the Reports section.',
+  },
+
+  {
+    status: 'old',
+    title: 'New Product Added',
+    message:
+      "Exciting news! We've added a new product, Product B, to our catalog. Start promoting it today.",
+  },
+
+  {
+    status: 'old',
+    title: 'Pending Sales Approval',
+    message:
+      'There are 3 sales pending your approval. Please review and take action.',
+  },
+
+  {
+    status: 'old',
+    title: 'Customer Feedback Request',
+    message:
+      'We value your opinion! Kindly take a moment to provide feedback on your recent purchase.',
   },
 ];
