@@ -1,5 +1,11 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Observable, takeUntil } from 'rxjs';
+import {
+  Component,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { Observable, Subject, takeUntil } from 'rxjs';
 import { NotificationsService } from 'src/app/shared/services/notifications.service';
 import { INotification } from 'src/app/shared/types/notification';
 
@@ -8,16 +14,18 @@ import { INotification } from 'src/app/shared/types/notification';
   templateUrl: './notifications.component.html',
   styleUrls: ['./notifications.component.scss'],
 })
-export class NotificationsComponent implements OnInit {
+export class NotificationsComponent implements OnInit, OnDestroy {
   @Output() closeNotifications: EventEmitter<MouseEvent> = new EventEmitter();
 
   notifications$: Observable<INotification[]> = this.notificationsService.get();
   notifications: INotification[] = [];
 
+  ngUnsubscribe: Subject<void> = new Subject();
+
   constructor(private notificationsService: NotificationsService) {}
 
   ngOnInit(): void {
-    this.notifications$.pipe(takeUntil(this.closeNotifications)).subscribe({
+    this.notifications$.pipe(takeUntil(this.ngUnsubscribe)).subscribe({
       next: (data) => {
         this.notifications = data;
       },
@@ -25,5 +33,10 @@ export class NotificationsComponent implements OnInit {
         throw new Error("Can't load notifications");
       },
     });
+  }
+
+  ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
   }
 }
