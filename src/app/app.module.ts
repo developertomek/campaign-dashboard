@@ -15,6 +15,7 @@ import { RecenttransactionsComponent } from './pages/home/components/recenttrans
 import { LeftnavComponent } from './components/leftnav/leftnav.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
+import { AddmoneyComponent } from './components/addmoney/addmoney.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NotificationsComponent } from './components/notifications/notifications
     LeftnavComponent,
     SettingsComponent,
     NotificationsComponent,
+    AddmoneyComponent,
   ],
   imports: [
     BrowserModule,

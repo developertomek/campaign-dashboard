@@ -18,4 +18,5 @@ export class TopnavComponent {
   @Output() toggleSidenav: EventEmitter<MouseEvent> = new EventEmitter();
 
   openNotifications: boolean = false;
+  openAddMoney: boolean = false;
 }

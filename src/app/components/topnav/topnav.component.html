@@ -18,6 +18,7 @@
         color="accent"
         aria-label="Fab button add balance"
         matTooltip="add balance"
+        (click)="openAddMoney = !openAddMoney; openNotifications = false"
       >
         <mat-icon>add</mat-icon>
       </button>
@@ -27,7 +28,7 @@
       class="notification-icon"
       aria-label="Icon-button with notification icon"
       matTooltip="notifications"
-      (click)="openNotifications = !openNotifications"
+      (click)="openNotifications = !openNotifications; openAddMoney = false"
     >
       <span class="status"></span>
       <mat-icon class="material-icons-outlined">notifications</mat-icon>
@@ -43,5 +44,6 @@
       *ngIf="openNotifications"
       (closeNotifications)="openNotifications = false"
     />
+    <app-addmoney *ngIf="openAddMoney" (closeAddMoney)="openAddMoney = false" />
   </div>
 </mat-toolbar>

@@ -1,0 +1,17 @@
+<div class="addmoney-container">
+  <div class="addmoney-header">
+    <h3>Add money</h3>
+    <button
+      mat-icon-button
+      class="close-icon"
+      aria-label="Icon-button with close icon"
+      matTooltip="close"
+      (click)="closeAddMoney.emit($event)"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="addmoney-buttons">
+    <button *ngFor="let val of nominals" mat-stroked-button>+{{ val }}</button>
+  </div>
+</div>
