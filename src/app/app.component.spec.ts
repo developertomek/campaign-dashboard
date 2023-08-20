@@ -1,29 +1,42 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { MaterialModule } from './material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LeftnavComponent } from './components/leftnav/leftnav.component';
+import { TopnavComponent } from './components/topnav/topnav.component';
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    declarations: [AppComponent]
-  }));
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'campaign-dashboard'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('campaign-dashboard');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [RouterTestingModule, MaterialModule, BrowserAnimationsModule],
+      declarations: [AppComponent, LeftnavComponent, TopnavComponent],
+    });
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('campaign-dashboard app is running!');
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('check window width and set opened to true', () => {
+    fixture.detectChanges();
+    expect(component.opened).toBeFalse();
+    spyOnProperty(window, 'innerWidth').and.returnValue(1000);
+    window.dispatchEvent(new Event('resize'));
+    expect(component.opened).toBeTrue();
+  });
+
+  it('check window width and set opened to false', () => {
+    fixture.detectChanges();
+    expect(component.opened).toBeFalse();
+    spyOnProperty(window, 'innerWidth').and.returnValue(500);
+    window.dispatchEvent(new Event('resize'));
+    expect(component.opened).toBeFalse();
   });
 });
