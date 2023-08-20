@@ -11,7 +11,31 @@
       <mat-icon>close</mat-icon>
     </button>
   </div>
-  <div class="addmoney-buttons">
-    <button *ngFor="let val of nominals" mat-stroked-button>+{{ val }}</button>
+  <div class="addmoney-content">
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="0"
+        type="number"
+        [formControl]="amountMoney"
+      />
+    </mat-form-field>
+    <div class="addmoney-buttons">
+      <button
+        *ngFor="let val of nominals"
+        mat-stroked-button
+        (click)="addMoney(val)"
+      >
+        +{{ val }}
+      </button>
+    </div>
+    <button
+      class="add-btn"
+      mat-raised-button
+      color="primary"
+      (click)="closeAddMoney.emit($event)"
+    >
+      Add
+    </button>
   </div>
 </div>

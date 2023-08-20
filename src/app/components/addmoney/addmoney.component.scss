@@ -5,7 +5,7 @@
   border: 1px solid darken($info, 5);
   border-radius: 25px;
   box-shadow: 0px 0px 10px darken($info, 5);
-  max-width: 600px;
+  max-width: 300px;
   padding: 25px;
   position: absolute;
   right: 0;
@@ -17,5 +17,28 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+  }
+
+  .addmoney-content {
+    display: flex;
+    flex-direction: column;
+
+    .addmoney-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      button {
+        border-radius: 25px;
+        margin-bottom: 10px;
+        width: 120px;
+      }
+    }
+
+    .add-btn {
+      border-radius: 25px;
+      margin-top: 10px;
+      padding: 20px;
+    }
   }
 }
